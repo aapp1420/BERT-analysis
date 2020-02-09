@@ -23,7 +23,7 @@ Analysis Data: https://drive.google.com/open?id=1B-J6iuSj4OX_o3igmofUBPpY8lG9IVI
 
 
 ## Step 1 Train xnli and achieve accuracy performance approximately 73-76%
-Hint: Utilize run_xnli.py
+Hint: Utilize `run_xnli.py`
 
 * Train a model on multinli.train.zh.tsv and test on xnli.dev.tsv
 * Plot the training loss and testing accuracy 
@@ -47,25 +47,37 @@ There are four main definitions in this part:
 
 Preprocessing data: 
 
-for the following four definitions, the embedding you need to remove [CLS] and [PAD] and [SEP] three kinds of word to analysis the trend of embeddings of each layer.
+for the following four definitions, the embedding you need to remove [CLS] and [PAD] and [SEP] three kinds of word to analysis the trend of embeddings of each layer
 
 **Four Main Definition**:
 
   **Anistropy**:  
   
-  The expected cosine similarity between 2 random word embeddings of a layer.
+  The expected cosine similarity between 2 random word embeddings of a layer
   
   **Self-similarity**:  
-  
-  The average cosine similarity of every embedding of a word (character for chinese) in a given layer.
+ 
+  The average cosine similarity of every embedding of a word (character for chinese) in a given layer
   
   **Intra-sentence similarity**: 
   
-  The average cosine similarity between the sentence’s embedding. (mean pooling the words from a sentence data to form sentence embedding and calculate the cosine similarity with each words inside the sentence and the sentence embedding.)
+  The average cosine similarity between the sentence’s embedding. (mean pooling the words from a sentence data to form sentence embedding and calculate the cosine similarity with each words inside the sentence and the sentence embedding)
   
-  **Maximum Explainable Variance**: 
+  **Maximum explainable variance**: 
   
-  In a given layer, take all embeddings of a word, stack them into a matrix and using SVD to compute their singular values. The MEV is (the first (biggest) singular value’s square) / (sum of squares of all the singular values)
+  In a given layer, take all embeddings of a word, stack them into a matrix and using SVD to compute their singular values The MEV is (the first (biggest) singular value’s square) / (sum of squares of all the singular values)
+  
+  **Two modifying definitions**:
+  
+  **Anisotropy adjusted self-similarity**
+  
+  A word’s self-similarity - Anisotropy
+  
+  **Anisotropy adjusted intra-sentence similarity**:
+  
+  Intra-sentence similarity - Anisotropy
+
+
  
 Code:
   
@@ -73,25 +85,25 @@ Code:
   
   **Preprocessing data**: 
   
-  for the following four definitions, the embedding you need to remove [CLS] and [PAD] and [SEP] three kinds of word to analysis the trend of embeddings of each layer. (corresponding word index are 101, 0, 102)
+  for the following four definitions, the embedding you need to remove [CLS] and [PAD] and [SEP] three kinds of word to analysis the trend of embeddings of each layer (corresponding word index are 101, 0, 102)
   
   The code may needs four functions:
   
   * **Anisotropy_function(... ,layer_index)** : 
   
-  return Anistropy of each layer .
+  return Anistropy of each layer 
   
   * **SelfSimilarity_function(... , layer_index)**: 
   
-  return self similarity of each layer . 
+  return self similarity of each layer 
   
   * **IntraSentenceSimilarity_function(... , layer_index)**: 
   
-  retrun intra sentence similarity of each layer . 
+  retrun intra sentence similarity of each layer 
   
   * **MaximumExplainableVariance_function(... , layer_index)**: 
   
-  return maximum explainable variance of each layer .
+  return maximum explainable variance of each layer 
   
   **Plot the corresponding figure of each definition for both pretrained embeddings and finetuned embeddings**.
   
