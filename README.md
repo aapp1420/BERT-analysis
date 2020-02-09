@@ -33,7 +33,8 @@ Hint: Utilize run_xnli.py
 ## Step 2 Generate pretrained data and finetune data from xnli-sample data
 Example Code: `generate-similarity-data.py` (Using analysis data )(You also can write by yourself)
 
-store each data: with its 
+store each data with its 
+
 {"input_ids": ..., "layer_0": the embedding of each data in numpy array in layer_0, "layer_1": the embedding of each data in numpy array in layer_1, "layer_2": the embedding of each data in numpy array in layer_2, ... "layer_12":the embedding of each data in numpy array in layer_12}
 
 (data is a list of dict)
@@ -44,7 +45,9 @@ Hint: you need to save the data generate from pretrained model and fintuned-mode
 
 There are four main definitions in this part:
 
-Preprocessing data: for the following four definitions, the embedding you need to remove [CLS] and [PAD] and [SEP] three kinds of word to analysis the trend of embeddings of each layer.
+Preprocessing data: 
+
+for the following four definitions, the embedding you need to remove [CLS] and [PAD] and [SEP] three kinds of word to analysis the trend of embeddings of each layer.
 
 **Four Main Definition**:
 
