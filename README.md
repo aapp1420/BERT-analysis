@@ -34,7 +34,7 @@ Hint: Utilize run_xnli.py
 Example Code: generate-similarity-data.py (Using analysis data )(You also can write by yourself)
 
 store each data: with its 
-{"input_ids": ..., "layer_0": {the embedding of each data in numpy array in layer_0}, "layer_1": the embedding of each data in numpy array in layer_1, "layer_2: the embedding of each data in numpy array in layer_2, ... "layer_12":the embedding of each data in numpy array in layer_12}
+{"input_ids": ..., "layer_0": {the embedding of each data in numpy array in layer_0}, "layer_1": the embedding of each data in numpy array in layer_1, "layer_2": the embedding of each data in numpy array in layer_2, ... "layer_12":the embedding of each data in numpy array in layer_12}
 
 (data is a list of dict)
 
@@ -58,9 +58,9 @@ First:
 Second:
   Write a code named **similarity.py**
   
-  **Preprocessing data**: for the following four definitions, the embedding you need to remove [CLS] and [PAD] two kinds of word to analysis the trend of embeddings of each layer.
+  **Preprocessing data**: for the following four definitions, the embedding you need to remove [CLS] and [PAD] and [SEP] three kinds of word to analysis the trend of embeddings of each layer. (correspond word index is 101, 102, 0)
   
-  The code needs four function:
+  The code may needs four function:
   
   * **Anisotropy_function(... ,layer_index)** : return Anistropy of each layer .
   
