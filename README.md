@@ -41,9 +41,9 @@ store each data: with its
 Hint: you need to save the data generate from pretrained model and fintuned-model (the model you save)
 
 ## Step 3 analysis bert layer embedding:
-There are Four main definitions for this area:
+There are four main definitions in this part:
 
-Preprocessing data: for the following four definitions, the embedding you need to remove [CLS] and [PAD] two kinds of word to analysis the trend of embeddings of each layer.
+Preprocessing data: for the following four definitions, the embedding you need to remove [CLS] and [PAD] and [SEP] three kinds of word to analysis the trend of embeddings of each layer.
 
 First:
 
@@ -56,7 +56,7 @@ First:
   **Maximum Explainable Variance**: In a given layer, take all embeddings of a word, stack them into a matrix and using SVD to compute their singular values. The MVE is (the first (biggest) singular value’s square) / (sum of squares of all the singular values)
  
 Second:
-  Write a code named **similarity.py**
+  Write a code named `similarity.py`
   
   **Preprocessing data**: for the following four definitions, the embedding you need to remove [CLS] and [PAD] and [SEP] three kinds of word to analysis the trend of embeddings of each layer. (correspond word index is 101, 102, 0)
   
