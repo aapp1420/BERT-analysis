@@ -49,7 +49,7 @@ Preprocessing data:
 
 for the following four definitions, the embedding you need to remove [CLS] and [PAD] and [SEP] three kinds of word to analysis the trend of embeddings of each layer
 
-**Four Main Definition**:
+**Four main definition**:
 
   **Anistropy**:  
   
@@ -85,7 +85,7 @@ Code:
   
   **Preprocessing data**: 
   
-  for the following four definitions, the embedding you need to remove [CLS] and [PAD] and [SEP] three kinds of word to analysis the trend of embeddings of each layer (corresponding word index are 101, 0, 102)
+  For the following four definitions, the embedding you need to remove [CLS] and [PAD] and [SEP] three kinds of word to analysis the trend of embeddings of each layer (corresponding word index are 101, 0, 102)
   
   The code may needs four functions:
   
