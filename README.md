@@ -105,7 +105,19 @@ Code:
   
   return maximum explainable variance of each layer 
   
-  **Plot the corresponding figure of each definition for both pretrained embeddings and finetuned embeddings**.
+  **Plot the corresponding figure of each definition for both pretrained embeddings and finetuned embeddings**
+  
+  Anisotropy of each layers:
+  
+  Self similarity of each layers:
+  
+  Intra similarity of each layers:
+  
+  Maximum explainable variance of each layers:
+  
+  
+  
+  
   
   
   
