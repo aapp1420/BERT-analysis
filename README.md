@@ -1,5 +1,5 @@
 # BERT-analysis
-This is the homework repository of Deep Learning for Human Language Processing 
+This is the homework 3-1 part repository of Deep Learning for Human Language Processing 
 ## Goal
 The goal for this homework is:
 * train a chinese nli task and save model.
