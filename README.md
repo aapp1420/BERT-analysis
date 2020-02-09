@@ -53,7 +53,7 @@ First:
   
   **Intra-sentence similarity**: The average cosine similarity between the sentence’s embedding. (mean pooling the words from a sentence data to form sentence embedding and calculate the cosine similarity with each words inside the sentence and the sentence embedding.)
   
-  **Maximum Explainable Variance**: In a given layer, take all embeddings of a word, stack them into a matrix and using SVD to compute their singular values. The MVE is (the first (biggest) singular value’s square) / (sum of squares of all the singular values)
+  **Maximum Explainable Variance**: In a given layer, take all embeddings of a word, stack them into a matrix and using SVD to compute their singular values. The MEV is (the first (biggest) singular value’s square) / (sum of squares of all the singular values)
  
 Second:
   Write a code named `similarity.py`
