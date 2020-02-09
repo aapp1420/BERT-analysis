@@ -107,7 +107,7 @@ for the following four definitions, the embedding you need to remove [CLS] and [
   
   return maximum explainable variance of each layer 
   
-## Step 4 Plot the corresponding figure of each definition for both pretrained embeddings and finetuned embeddings and save picture in bert/picture**
+## Step 4 Plot the corresponding figure of each definition for both pretrained embeddings and finetuned embeddings and save picture in bert/picture
   
   Anisotropy of each layers:
 
