@@ -41,34 +41,54 @@ store each data: with its
 Hint: you need to save the data generate from pretrained model and fintuned-model (the model you save)
 
 ## Step 3 analysis bert layer embedding:
+
 There are four main definitions in this part:
 
 Preprocessing data: for the following four definitions, the embedding you need to remove [CLS] and [PAD] and [SEP] three kinds of word to analysis the trend of embeddings of each layer.
 
 **Four Main Definition**:
 
-  **Anistropy**:  The expected cosine similarity between 2 random word embeddings of a layer.
+  **Anistropy**:  
   
-  **Self-similarity**:  The average cosine similarity of every embedding of a word (character for chinese) in a given layer.
+  The expected cosine similarity between 2 random word embeddings of a layer.
   
-  **Intra-sentence similarity**: The average cosine similarity between the sentence’s embedding. (mean pooling the words from a sentence data to form sentence embedding and calculate the cosine similarity with each words inside the sentence and the sentence embedding.)
+  **Self-similarity**:  
   
-  **Maximum Explainable Variance**: In a given layer, take all embeddings of a word, stack them into a matrix and using SVD to compute their singular values. The MEV is (the first (biggest) singular value’s square) / (sum of squares of all the singular values)
+  The average cosine similarity of every embedding of a word (character for chinese) in a given layer.
+  
+  **Intra-sentence similarity**: 
+  
+  The average cosine similarity between the sentence’s embedding. (mean pooling the words from a sentence data to form sentence embedding and calculate the cosine similarity with each words inside the sentence and the sentence embedding.)
+  
+  **Maximum Explainable Variance**: 
+  
+  In a given layer, take all embeddings of a word, stack them into a matrix and using SVD to compute their singular values. The MEV is (the first (biggest) singular value’s square) / (sum of squares of all the singular values)
  
-Second:
+Code:
+  
   Write a code named `similarity.py`
   
-  **Preprocessing data**: for the following four definitions, the embedding you need to remove [CLS] and [PAD] and [SEP] three kinds of word to analysis the trend of embeddings of each layer. (corresponding word index are 101, 0, 102)
+  **Preprocessing data**: 
+  
+  for the following four definitions, the embedding you need to remove [CLS] and [PAD] and [SEP] three kinds of word to analysis the trend of embeddings of each layer. (corresponding word index are 101, 0, 102)
   
   The code may needs four functions:
   
-  * **Anisotropy_function(... ,layer_index)** : return Anistropy of each layer .
+  * **Anisotropy_function(... ,layer_index)** : 
   
-  * **SelfSimilarity_function(... , layer_index)**: return self similarity of each layer . 
+  return Anistropy of each layer .
   
-  * **IntraSentenceSimilarity_function(... , layer_index)**: retrun intra sentence similarity of each layer . 
+  * **SelfSimilarity_function(... , layer_index)**: 
   
-  * **MaximumExplainableVariance_function(... , layer_index)**: return maximum explainable variance of each layer .
+  return self similarity of each layer . 
+  
+  * **IntraSentenceSimilarity_function(... , layer_index)**: 
+  
+  retrun intra sentence similarity of each layer . 
+  
+  * **MaximumExplainableVariance_function(... , layer_index)**: 
+  
+  return maximum explainable variance of each layer .
   
   **Plot the corresponding figure of each definition for both pretrained embeddings and finetuned embeddings**.
   
