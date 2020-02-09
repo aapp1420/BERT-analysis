@@ -45,7 +45,7 @@ There are four main definitions in this part:
 
 Preprocessing data: for the following four definitions, the embedding you need to remove [CLS] and [PAD] and [SEP] three kinds of word to analysis the trend of embeddings of each layer.
 
-First:
+**Four Main Definition**:
 
   **Anistropy**:  The expected cosine similarity between 2 random word embeddings of a layer.
   
