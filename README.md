@@ -37,9 +37,9 @@ Write a code named `generate-similarity-data.py`
 
 store each xnli data with its 
 
-{"input_ids": ..., "layer_0": the embedding of each data in numpy array in layer_0, "layer_1": the embedding of each data in numpy array in layer_1, "layer_2": the embedding of each data in numpy array in layer_2, ... "layer_12":the embedding of each data in numpy array in layer_12}
+{"input_ids": ..., "layer_0": the embedding of each data in numpy array in layer_0, "layer_1": the embedding of each data in numpy array in layer 1, "layer_2": the embedding of each data in numpy array in layer 2, ... "layer_12":the embedding of each data in numpy array in layer 12}
 
-(data is a list of dict)
+(generated data is a list of dict)
 
 Hint: you need to save the data generate from pretrained model and fintuned-model (the model you save)
 
