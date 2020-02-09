@@ -2,7 +2,7 @@
 This is the homework repository of Deep Learning for Human Language Processing 
 ## Goal
 The goal for this homework is:
-* train a chinese nli task and save model 
+* train a chinese nli task and save model.
 * generate dataset which created from each layer embedding of each data in xnli sample data (two dataset: one is created from pretrained model, the other one is fintuned model.)
 * analysis embeddings (anisotropy, self-similarity, Maximum Explainable Variances) (also include the adjusted anisotropy version)
 
@@ -31,9 +31,12 @@ Hint: Utilize run_xnli.py
 * Remember to save the best model for later analysis
 
 ## Step 2 Generate pretrained data and finetune data for xnli-sample data
-Example Code: generate-similarity-data.py
+Example Code: generate-similarity-data.py (Using analysis data )(You also can write by yourself)
 
-store each data: with its input_ids/ layer_0_embedding / layer_1_embedding / layer_2_embedding / layer_3_embedding ... layer_12_embedding
+store each data: with its 
+{"input_ids":..., "layer_0": {the embedding of each data in numpy array in layer_0}, "layer_1": the embedding of each data in numpy array in layer_1, "layer_2: the embedding of each data in numpy array in layer_2, ... "layer_12":the embedding of each data in numpy array in layer_12}
+
+(data is a list of dict)
 
 Hint: you need to save the data generate from pretrained model and fintuned-model (the model you save)
 
@@ -51,8 +54,25 @@ First:
   **Intra-sentence similarity**: The average cosine similarity between the sentence’s embedding. (mean pooling the words from a sentence data to form sentence embedding and calculate the cosine similarity with each words inside the sentence and the sentence embedding.)
   
   **Maximum Explainable Variance**: In a given layer, take all embeddings of a word, stack them into a matrix and using SVD to compute their singular values. The MVE is (the first (biggest) singular value’s square) / (sum of squares of all the singular values)
+ 
+Seconds:
+  Write a code named **similarity.py**
   
-## Step 4 Plot the figures
+  **Preprocessing data**: for the following four definitions, the embedding you need to remove [CLS] and [PAD] two kinds of word to analysis the trend of embeddings of each layer.
+  
+  The code needs four function:
+  
+  * **Anisotropy_function(... ,layer_index)** : return Anistropy of each layer .
+  
+  * **SelfSimilarity_function(... , layer_index)**: return self similarity of each layer . 
+  
+  * **IntraSentenceSimilarity_function(... , layer_index)**: retrun intra sentence similarity of each layer . 
+  
+  * **MaximumExplainableVariance_function(... , layer_index)**: return maximum explainable variance of each layer .
+  
+  Plot the corresponding figure of each definition for both pretrained embeddings and finetuned embeddings.
+  
+
 
   
 
