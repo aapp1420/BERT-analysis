@@ -4,7 +4,7 @@ This is the homework 3-1 part repository of Deep Learning for Human Language Pro
 The goal for this homework is:
 * train a chinese nli task and save model.
 * generate dataset which created from each layer embedding of each data in xnli sample data (two dataset: one is created from pretrained model, the other one is fintuned model.)
-* analysis embeddings (anisotropy, self-similarity, Maximum Explainable Variances) (also include the adjusted anisotropy version)
+* analysis embeddings (anisotropy, self-similarity, intra-sentence similarity, Maximum Explainable Variances) (also include the adjusted anisotropy version)
 
 ## Dataset: Xnli zh
 Training:  https://www.nyu.edu/projects/bowman/xnli/XNLI-MT-1.0.zip  
