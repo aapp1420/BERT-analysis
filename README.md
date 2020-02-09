@@ -45,11 +45,11 @@ Hint: you need to save the data generate from pretrained model and fintuned-mode
 
 ## Step 3 analysis bert layer embedding:
 
-There are four main definitions in this part:
+There are four main definitions and two modifying definitions in this part:
 
 Preprocessing data: 
 
-for the following four definitions, the embedding you need to remove [CLS] and [PAD] and [SEP] three kinds of word to analysis the trend of embeddings of each layer
+for the following six definitions, the embedding you need to remove [CLS] and [PAD] and [SEP] three kinds of word to analysis the trend of embeddings of each layer
 
 **Four main definition**:
 
@@ -87,7 +87,7 @@ for the following four definitions, the embedding you need to remove [CLS] and [
   
   **Preprocessing data**: 
   
-  For the following four definitions, the embedding you need to remove [CLS] and [PAD] and [SEP] three kinds of word to analysis the trend of embeddings of each layer (corresponding word index are 101, 0, 102)
+  For the above six definitions, the embedding you need to remove [CLS] and [PAD] and [SEP] three kinds of word to analysis the trend of embeddings of each layer (corresponding word index are 101, 0, 102)
   
   The code may needs four functions:
   
