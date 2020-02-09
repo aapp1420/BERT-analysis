@@ -107,15 +107,31 @@ Code:
   
   return maximum explainable variance of each layer 
   
-  **Plot the corresponding figure of each definition for both pretrained embeddings and finetuned embeddings**
+  **Plot the corresponding figure of each definition for both pretrained embeddings and finetuned embeddings and save in bert/picture**
   
   Anisotropy of each layers:
+
+  [Anisotropy.png](bert/picture/Anisotropy.png)
   
   Self similarity of each layers:
+
+  [Self-similarity.png](bert/picture/Self-similarity.png)
   
   Intra similarity of each layers:
+
+  [Intra-sentence-similarity.png](bert/picture/Intra-sentence-similarity.png)
   
   Maximum explainable variance of each layers:
+
+  [Maximum-explainable-variance.pn](bert/picture/Maximum-explainable-variance.png)
+
+  Anisotropy adjusted intra-sentence similarity of each layers:
+
+  [Anistropy-adjusted-Intra-sentence-similarity.png](bert/picture/Anistropy-adjusted-Intra-sentence-similarity.png)
+
+  Anisotropy adjusted self-similarity of each layers:
+
+  [Anisotropy-adjusted-self-similarity.png](bert/picture/Anisotropy-adjusted-self-similarity.png)
   
   
   
