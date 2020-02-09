@@ -40,17 +40,17 @@ Hint: you need to save the data generate from pretrained model and fintuned-mode
 ## Step 3 analysis bert layer embedding:
 There are Four definitions for this area:
 
-Preprocessing data: for the following definitions, the embedding you need to remove [CLS] and [PAD] two words to analysis.
+Preprocessing data: for the following four definitions, the embedding you need to remove [CLS] and [PAD] two kinds of word to analysis the trend of embeddings of each layer.
 
 First:
 
-  Anistropy:  The expected cosine similarity between 2 random word embeddings of a layer.
+  **Anistropy**:  The expected cosine similarity between 2 random word embeddings of a layer.
   
-  Self-similarity:  The average cosine similarity of every embedding of a word (character for chinese) in a given layer.
+  **Self-similarity**:  The average cosine similarity of every embedding of a word (character for chinese) in a given layer.
   
-  Intra-sentence similarity: The average cosine similarity between the sentence’s embedding. (mean pooling the words from a sentence data to form sentence embedding and calculate the cosine similarity with each words inside the sentence and the sentence embedding.)
+  **Intra-sentence similarity**: The average cosine similarity between the sentence’s embedding. (mean pooling the words from a sentence data to form sentence embedding and calculate the cosine similarity with each words inside the sentence and the sentence embedding.)
   
-  Maximum Explainable Variance: In a given layer, take all embeddings of a word, stack them into a matrix and using SVD to compute their singular values. The MVE is (the first (biggest) singular value’s square) / (sum of squares of all the singular values)
+  **Maximum Explainable Variance**: In a given layer, take all embeddings of a word, stack them into a matrix and using SVD to compute their singular values. The MVE is (the first (biggest) singular value’s square) / (sum of squares of all the singular values)
   
 ## Step 4 Plot the figures
 
