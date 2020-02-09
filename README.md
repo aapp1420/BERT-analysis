@@ -133,7 +133,7 @@ Code:
 
   ![Anisotropy-adjusted-self-similarity.png](bert/picture/Anisotropy-adjusted-self-similarity.png)
 
-  Blue line is pretrained model, x-axis is layer index y-axis is the value of corresponding value.
+  Blue line is pretrained model, x-axis is layer index and  y-axis is the value of corresponding value.
   
   
   
