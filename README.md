@@ -30,7 +30,7 @@ Hint: Utilize run_xnli.py
 * 3 epochs may be sufficient
 * Remember to save the best model for later analysis
 
-## Step 2 Generate pretrained data and finetune data for xnli-sample data
+## Step 2 Generate pretrained data and finetune data from xnli-sample data
 Example Code: generate-similarity-data.py (Using analysis data )(You also can write by yourself)
 
 store each data: with its 
