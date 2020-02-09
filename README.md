@@ -58,7 +58,7 @@ Preprocessing data: for the following four definitions, the embedding you need t
 Second:
   Write a code named `similarity.py`
   
-  **Preprocessing data**: for the following four definitions, the embedding you need to remove [CLS] and [PAD] and [SEP] three kinds of word to analysis the trend of embeddings of each layer. (correspond word index is 101, 102, 0)
+  **Preprocessing data**: for the following four definitions, the embedding you need to remove [CLS] and [PAD] and [SEP] three kinds of word to analysis the trend of embeddings of each layer. (corresponding word index are 101, 0, 102)
   
   The code may needs four functions:
   
