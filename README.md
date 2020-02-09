@@ -31,7 +31,7 @@ Hint: Utilize run_xnli.py
 * Remember to save the best model for later analysis
 
 ## Step 2 Generate pretrained data and finetune data from xnli-sample data
-Example Code: generate-similarity-data.py (Using analysis data )(You also can write by yourself)
+Example Code: `generate-similarity-data.py` (Using analysis data )(You also can write by yourself)
 
 store each data: with its 
 {"input_ids": ..., "layer_0": the embedding of each data in numpy array in layer_0, "layer_1": the embedding of each data in numpy array in layer_1, "layer_2": the embedding of each data in numpy array in layer_2, ... "layer_12":the embedding of each data in numpy array in layer_12}
