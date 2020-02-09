@@ -15,7 +15,7 @@ Testing:  https://www.nyu.edu/projects/bowman/xnli/XNLI-1.0.zip
 
 (Use XNLI-1.0/xnli.dev.tsv)
 
-replace the same name folder in the dataset folder and put the coresponding data  into the dataset folder
+replace the same name folder in the dataset folder and put the corresponding data  into the dataset folder
 
 Analysis Data: https://drive.google.com/open?id=1B-J6iuSj4OX_o3igmofUBPpY8lG9IVIT 
 
@@ -34,14 +34,14 @@ Hint: Utilize run_xnli.py
 Example Code: generate-similarity-data.py (Using analysis data )(You also can write by yourself)
 
 store each data: with its 
-{"input_ids":..., "layer_0": {the embedding of each data in numpy array in layer_0}, "layer_1": the embedding of each data in numpy array in layer_1, "layer_2: the embedding of each data in numpy array in layer_2, ... "layer_12":the embedding of each data in numpy array in layer_12}
+{"input_ids": ..., "layer_0": {the embedding of each data in numpy array in layer_0}, "layer_1": the embedding of each data in numpy array in layer_1, "layer_2: the embedding of each data in numpy array in layer_2, ... "layer_12":the embedding of each data in numpy array in layer_12}
 
 (data is a list of dict)
 
 Hint: you need to save the data generate from pretrained model and fintuned-model (the model you save)
 
 ## Step 3 analysis bert layer embedding:
-There are Four definitions for this area:
+There are Four main definitions for this area:
 
 Preprocessing data: for the following four definitions, the embedding you need to remove [CLS] and [PAD] two kinds of word to analysis the trend of embeddings of each layer.
 
@@ -55,7 +55,7 @@ First:
   
   **Maximum Explainable Variance**: In a given layer, take all embeddings of a word, stack them into a matrix and using SVD to compute their singular values. The MVE is (the first (biggest) singular value’s square) / (sum of squares of all the singular values)
  
-Seconds:
+Second:
   Write a code named **similarity.py**
   
   **Preprocessing data**: for the following four definitions, the embedding you need to remove [CLS] and [PAD] two kinds of word to analysis the trend of embeddings of each layer.
@@ -71,6 +71,8 @@ Seconds:
   * **MaximumExplainableVariance_function(... , layer_index)**: return maximum explainable variance of each layer .
   
   Plot the corresponding figure of each definition for both pretrained embeddings and finetuned embeddings.
+  
+  
   
 
 
