@@ -111,27 +111,29 @@ Code:
   
   Anisotropy of each layers:
 
-  [Anisotropy.png](bert/picture/Anisotropy.png)
+  ![Anisotropy.png](bert/picture/Anisotropy.png)
   
   Self similarity of each layers:
 
-  [Self-similarity.png](bert/picture/Self-similarity.png)
+  ![Self-similarity.png](bert/picture/Self-similarity.png)
   
   Intra similarity of each layers:
 
-  [Intra-sentence-similarity.png](bert/picture/Intra-sentence-similarity.png)
+  ![Intra-sentence-similarity.png](bert/picture/Intra-sentence-similarity.png)
   
   Maximum explainable variance of each layers:
 
-  [Maximum-explainable-variance.pn](bert/picture/Maximum-explainable-variance.png)
+  ![Maximum-explainable-variance.pn](bert/picture/Maximum-explainable-variance.png)
 
   Anisotropy adjusted intra-sentence similarity of each layers:
 
-  [Anistropy-adjusted-Intra-sentence-similarity.png](bert/picture/Anistropy-adjusted-Intra-sentence-similarity.png)
+  ![Anistropy-adjusted-Intra-sentence-similarity.png](bert/picture/Anistropy-adjusted-Intra-sentence-similarity.png)
 
   Anisotropy adjusted self-similarity of each layers:
 
-  [Anisotropy-adjusted-self-similarity.png](bert/picture/Anisotropy-adjusted-self-similarity.png)
+  ![Anisotropy-adjusted-self-similarity.png](bert/picture/Anisotropy-adjusted-self-similarity.png)
+
+  Blue line is pretrained model, x-axis is layer index y-axis is each cosine-similarity
   
   
   
