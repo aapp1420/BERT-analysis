@@ -81,7 +81,7 @@ for the following four definitions, the embedding you need to remove [CLS] and [
 
 
  
-Code:
+## Code:
   
   Write a code named `similarity.py`
   
@@ -107,7 +107,7 @@ Code:
   
   return maximum explainable variance of each layer 
   
-  **Plot the corresponding figure of each definition for both pretrained embeddings and finetuned embeddings and save in bert/picture**
+## Step 4 Plot the corresponding figure of each definition for both pretrained embeddings and finetuned embeddings and save picture in bert/picture**
   
   Anisotropy of each layers:
 
@@ -134,6 +134,7 @@ Code:
   ![Anisotropy-adjusted-self-similarity.png](bert/picture/Anisotropy-adjusted-self-similarity.png)
 
   Blue line is pretrained model,orange line is finetuned model.
+
   x-axis is layer index and  y-axis is the value of corresponding definition.
   
   
