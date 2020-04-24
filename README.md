@@ -69,17 +69,19 @@ for the following six definitions, the embedding you need to remove [CLS] and [P
   
   In a given layer, take all embeddings of a word, stack them into a matrix and using SVD to compute their singular values The MEV is (the first (biggest) singular value’s square) / (sum of squares of all the singular values)
   
-  **Two modifying definitions**:
+  **Three extra definitions**:
   
   **Anisotropy adjusted self-similarity**
   
-  A word’s self-similarity - Anisotropy
+  A word’s self-similarity - Anisotropy(similarity)
   
   **Anisotropy adjusted intra-sentence similarity**:
   
-  Intra-sentence similarity - Anisotropy
-
-
+  Intra-sentence similarity - Anisotropy(similarity)
+  
+  **Anisotropy adjusted Maximum explainable variance**:
+  
+  Maximum explainable variance - Anisotropy (MEV version)
  
 ## Code:
   
@@ -91,7 +93,8 @@ for the following six definitions, the embedding you need to remove [CLS] and [P
   
   The code may needs four functions:
   
-  * **Anisotropy_function(... ,layer_index)** : 
+  * **Anisotropy_function(... ,layer_index,version)** :
+      version have two option: "MEV" and "similarity"
   
   return Anistropy of each layer 
   
@@ -106,6 +109,8 @@ for the following six definitions, the embedding you need to remove [CLS] and [P
   * **MaximumExplainableVariance_function(... , layer_index)**: 
   
   return maximum explainable variance of each layer 
+  
+  "You also need to output the anisotropy adjust version of three metric"
   
 ## Step 4 Plot the corresponding figure of each definition for both pretrained embeddings and finetuned embeddings and save picture in bert/picture
   
