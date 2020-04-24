@@ -65,6 +65,7 @@ for the following six definitions, the embedding you need to remove [CLS] and [P
   
   The average cosine similarity between the sentence’s embedding. (mean pooling the words from a sentence data to form sentence embedding and calculate the cosine similarity with each words inside the sentence and the sentence embedding)
   
+
   **Maximum explainable variance**: 
   
   In a given layer, take all embeddings of a word, stack them into a matrix and using SVD to compute their singular values The MEV is (the first (biggest) singular value’s square) / (sum of squares of all the singular values)
@@ -79,13 +80,13 @@ for the following six definitions, the embedding you need to remove [CLS] and [P
   
   Intra-sentence similarity - Anisotropy(similarity)
   
-  **Anisotropy adjusted Maximum explainable variance**:
+  **(Bonus) Anisotropy adjusted Maximum explainable variance**:
   
   Maximum explainable variance - Anisotropy (MEV version)
  
 ## Code:
   
-  Write a code named `similarity.py`
+  Use a code named `similarity-student.py`, finish the Todo block.
   
   **Preprocessing data**: 
   
@@ -106,7 +107,7 @@ for the following six definitions, the embedding you need to remove [CLS] and [P
   
   retrun intra sentence similarity of each layer 
   
-  * **MaximumExplainableVariance_function(... , layer_index)**: 
+  * **(Bonus) MaximumExplainableVariance_function(... , layer_index)**: 
   
   return maximum explainable variance of each layer 
   
@@ -126,10 +127,6 @@ for the following six definitions, the embedding you need to remove [CLS] and [P
 
   ![Intra-sentence-similarity.png](bert/picture/Intra-sentence-similarity.png)
   
-  Maximum explainable variance of each layers:
-
-  ![Maximum-explainable-variance.pn](bert/picture/Maximum-explainable-variance.png)
-
   Anisotropy adjusted intra-sentence similarity of each layers:
 
   ![Anistropy-adjusted-Intra-sentence-similarity.png](bert/picture/Anistropy-adjusted-Intra-sentence-similarity.png)
@@ -137,8 +134,6 @@ for the following six definitions, the embedding you need to remove [CLS] and [P
   Anisotropy adjusted self-similarity of each layers:
 
   ![Anisotropy-adjusted-self-similarity.png](bert/picture/Anisotropy-adjusted-self-similarity.png)
-
-  Blue line is pretrained model,orange line is finetuned model.
 
   x-axis is layer index and  y-axis is the value of corresponding definition.
   
