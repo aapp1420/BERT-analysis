@@ -102,10 +102,12 @@ def evaluate(args, model, tokenizer, prefix=""):
         preds = None
         out_label_ids = None
         
+        ###### Save embedding data !!! #########
         for batch in tqdm(eval_dataloader, desc="Evaluating"):
             model.eval()
             batch = tuple(t.to(args.device) for t in batch)
 
+            
             with torch.no_grad():
                 inputs = {'input_ids':      batch[0],
                           'attention_mask': batch[1],
