@@ -220,12 +220,12 @@ def self_similarity(data,layer_index,function):
         del stochastic[key]
     
     select_numbers = stochastic.keys()
-    print(len(select_numbers))
+    # print(len(select_numbers))
 
     select_numbers_groups = []
     #build a dictionary:
     init = dict(zip(select_numbers,[[] for x in range(0,len(select_numbers))]))
-    print(init)
+    # print(init)
     for sample in tqdm(x_layer):
         if sample[0] in init.keys():
             init[sample[0]] += [sample[1]]
