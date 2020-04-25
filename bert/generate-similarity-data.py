@@ -120,7 +120,10 @@ def evaluate(args, model, tokenizer, prefix=""):
                     sample = {"input_ids": batch[0][i].cpu().numpy(),"layer_0":outputs[2][0][i].cpu().numpy(), "layer_1":outputs[2][1][i].cpu().numpy(), "layer_2":outputs[2][2][i].cpu().numpy(),"layer_3":outputs[2][3][i].cpu().numpy(),"layer_4":outputs[2][4][i].cpu().numpy(),"layer_5":outputs[2][5][i].cpu().numpy(),"layer_6":outputs[2][6][i].cpu().numpy(),"layer_7":outputs[2][7][i].cpu().numpy(),"layer_8":outputs[2][8][i].cpu().numpy(),"layer_9":outputs[2][9][i].cpu().numpy(),"layer_10":outputs[2][10][i].cpu().numpy(),"layer_11":outputs[2][11][i].cpu().numpy(),"layer_12":outputs[2][12][i].cpu().numpy()}
                     new_dataset += [copy.deepcopy(sample)]
 
+    # if u want to extract pretrained model embedding use name: pretrained-example-data.p  and comment line 126
     pickle.dump(new_dataset,open("xnli-pretrained-example-data.p","wb"))
+    # if u want to extract pretrained model embedding use name: finetune-example-data.p and comment line 124
+    # pickle.dump(new_dataset,open("xnli-finetune-example-data.p","wb"))
 
     return 
 

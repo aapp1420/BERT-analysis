@@ -180,7 +180,7 @@ class BertEmbeddings(nn.Module):
         embeddings = inputs_embeds + position_embeddings + token_type_embeddings
         embeddings = self.LayerNorm(embeddings)
         embeddings = self.dropout(embeddings)
-        return embeddings
+        return embeddings, inputs_embeds
 
 
 class BertSelfAttention(nn.Module):
@@ -366,12 +366,16 @@ class BertEncoder(nn.Module):
         self.output_hidden_states = config.output_hidden_states
         self.layer = nn.ModuleList([BertLayer(config) for _ in range(config.num_hidden_layers)])
 
-    def forward(self, hidden_states, attention_mask=None, head_mask=None, encoder_hidden_states=None, encoder_attention_mask=None):
+    def forward(self, hidden_states, attention_mask=None, head_mask=None, encoder_hidden_states=None, encoder_attention_mask=None,embedding_matrix=None):
         all_hidden_states = ()
         all_attentions = ()
         for i, layer_module in enumerate(self.layer):
             if self.output_hidden_states:
-                all_hidden_states = all_hidden_states + (hidden_states,)
+                if i ==0:
+                    ## important: need to use word embedding matrix to be the 0 layer embeddings (because embedding matrix will not add segment embedding and positional embedding)
+                    all_hidden_states = all_hidden_states + (embedding_matrix,)
+                else:
+                    all_hidden_states = all_hidden_states + (hidden_states,)
 
             layer_outputs = layer_module(hidden_states, attention_mask, head_mask[i], encoder_hidden_states, encoder_attention_mask)
             hidden_states = layer_outputs[0]
@@ -711,12 +715,13 @@ class BertModel(BertPreTrainedModel):
         else:
             head_mask = [None] * self.config.num_hidden_layers
 
-        embedding_output = self.embeddings(input_ids=input_ids, position_ids=position_ids, token_type_ids=token_type_ids, inputs_embeds=inputs_embeds)
+        embedding_output, embedding_matrix = self.embeddings(input_ids=input_ids, position_ids=position_ids, token_type_ids=token_type_ids, inputs_embeds=inputs_embeds)
         encoder_outputs = self.encoder(embedding_output,
                                        attention_mask=extended_attention_mask,
                                        head_mask=head_mask,
                                        encoder_hidden_states=encoder_hidden_states,
-                                       encoder_attention_mask=encoder_extended_attention_mask)
+                                       encoder_attention_mask=encoder_extended_attention_mask,
+                                       embedding_matrix=embedding_matrix)
         sequence_output = encoder_outputs[0]
         pooled_output = self.pooler(sequence_output)
 
