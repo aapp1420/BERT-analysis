@@ -8,6 +8,8 @@ The goal for this homework is:
 
 ## Dataset: Xnli zh
 Training:  https://www.nyu.edu/projects/bowman/xnli/XNLI-MT-1.0.zip  
+上面facebook的官方連結失效ㄌ
+如果上面那個解壓縮有問題 請follow 這裡: https://drive.google.com/file/d/1akEre8jiwGcVK6mxVQozjZT9AZ0pmk95/view?usp=sharing
 
 (Use XNLI-MT-1.0/multinli/multinli.train.zh.tsv)
 
