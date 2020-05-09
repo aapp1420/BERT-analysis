@@ -36,7 +36,10 @@ def preprocessing_intra_sentence(data,layer_index):
             word = x["input_ids"][word_index]
             if word == 101 or word == 0 or word == 102:
                 continue
+            embedding = x["layer_"+str(layer_index)][word_index]
+            sentence_embeddings += [embedding]
             count += 1
+        sentence_embedding = np.mean(sentence_embeddings,axis=0)
         for word_index in range(x["input_ids"].shape[0]):
             word = x["input_ids"][word_index]
             
@@ -44,8 +47,6 @@ def preprocessing_intra_sentence(data,layer_index):
             if word == 101 or word == 0 or word == 102:
                 continue
             embedding = x["layer_"+str(layer_index)][word_index]
-            sentence_embeddings += [embedding]
-            sentence_embedding = np.mean(sentence_embeddings,axis=0)
             x_layer += [(word, embedding, sentence_embedding,count)]
     return x_layer
 
