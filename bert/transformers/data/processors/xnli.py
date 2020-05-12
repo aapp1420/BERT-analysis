@@ -51,7 +51,7 @@ class XnliProcessor(DataProcessor):
 
     def get_test_examples(self, data_dir):
         """See base class."""
-        lines = self._read_tsv(os.path.join(data_dir, "XNLI-1.0/xnli.test.tsv"))
+        lines = self._read_tsv(os.path.join(data_dir, "XNLI-1.0/xnli.dev.tsv"))
         examples = []
         for (i, line) in enumerate(lines):
             if i == 0:
