@@ -14,6 +14,7 @@ Training:  https://www.nyu.edu/projects/bowman/xnli/XNLI-MT-1.0.zip
 (Use XNLI-MT-1.0/multinli/multinli.train.zh.tsv)
 
 Testing:  https://www.nyu.edu/projects/bowman/xnli/XNLI-1.0.zip 
+https://cims.nyu.edu/~sbowman/xnli/
 
 (Use XNLI-1.0/xnli.dev.tsv)
 
